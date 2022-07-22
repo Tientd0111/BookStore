@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useCategoryStore} from "../../stores/useCategoryStore";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
+	const {cate,getCate} = useCategoryStore(state => ({
+		cate: state.cate,
+		getCate: state.getCate
+	}))
+	useEffect(()=>{
+		getCate()
+	},[])
 	return (
 		<footer>
 			<div className="border-top space-top-3">
@@ -46,29 +55,25 @@ const Footer = () => {
 									<ul className="list-unstyled mb-0 d-flex">
 										<li className="btn pl-0">
 											<a className="link-black-100" href="#">
-												<span className="fab fa-instagram" />
+												<FontAwesomeIcon icon={['fab','facebook']} />
 											</a>
 										</li>
 										<li className="btn">
 											<a className="link-black-100" href="#">
-												<span className="fab fa-facebook-f" />
+												<FontAwesomeIcon icon={['fab','youtube']} />
 											</a>
 										</li>
 										<li className="btn">
 											<a className="link-black-100" href="#">
-												<span className="fab fa-youtube" />
+												<FontAwesomeIcon icon={['fab','twitter']} />
 											</a>
 										</li>
 										<li className="btn">
 											<a className="link-black-100" href="#">
-												<span className="fab fa-twitter" />
+												<FontAwesomeIcon icon={['fab','pinterest']} />
 											</a>
 										</li>
-										<li className="btn">
-											<a className="link-black-100" href="#">
-												<span className="fab fa-pinterest" />
-											</a>
-										</li>
+
 									</ul>
 								</div>
 							</div>
@@ -132,53 +137,13 @@ const Footer = () => {
 							<div className="col-lg-2 mb-6 mb-lg-0">
 								<h4 className="font-size-3 font-weight-medium mb-2 mb-xl-5 pb-xl-1">Categories</h4>
 								<ul className="list-unstyled mb-0">
-									<li className="pb-2">
-										<a className="widgets-hover transition-3d-hover font-size-2 link-black-100" href="#">Action</a>
-									</li>
-									<li className="py-2">
-										<a className="widgets-hover transition-3d-hover font-size-2 link-black-100" href="#">Comedy</a>
-									</li>
-									<li className="py-2">
-										<a className="widgets-hover transition-3d-hover font-size-2 link-black-100" href="#">Drama</a>
-									</li>
-									<li className="py-2">
-										<a className="widgets-hover transition-3d-hover font-size-2 link-black-100" href="#">Horror</a>
-									</li>
-									<li className="py-2">
-										<a className="widgets-hover transition-3d-hover font-size-2 link-black-100" href="#">Kids</a>
-									</li>
-									<li className="pt-2">
-										<a className="widgets-hover transition-3d-hover font-size-2 link-black-100" href="#">Romantic Comedy</a>
-									</li>
+									{cate.map((item)=>(
+										<li className="pb-2" key={item.id}>
+											<a className="widgets-hover transition-3d-hover font-size-2 link-black-100"
+											   href="/#">{item.name}</a>
+										</li>
+									))}
 								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="space-1">
-					<div className="container">
-						<div className="d-lg-flex text-center text-lg-left justify-content-between align-items-center">
-							<p className="mb-3 mb-lg-0 font-size-2">©2020 Book Worm. All rights reserved</p>
-							<div className="ml-auto d-lg-flex align-items-center">
-								<div className="mb-4 mb-lg-0 mr-5">
-									<img className="img-fluid" src="../assets/img/324x38/img1.png" alt="Image-Description" />
-								</div>
-								<select className="js-select selectpicker dropdown-select mb-3 mb-lg-0"
-										data-style="border px-4 py-2 rounded-0 height-5 outline-none shadow-none form-control font-size-2"
-										data-dropdown-align-right="true">
-									<option value="one" selected>English (United States)</option>
-									<option value="two">Deutsch</option>
-									<option value="three">Français</option>
-									<option value="four">Español</option>
-								</select>
-								<select className="js-select selectpicker dropdown-select ml-md-3"
-										data-style="border px-4 py-2 rounded-0 height-5 outline-none shadow-none form-control font-size-2"
-										data-dropdown-align-right="true" data-width="fit">
-									<option value="one" selected>$ USD</option>
-									<option value="two">€ EUR</option>
-									<option value="three">₺ TL</option>
-									<option value="four">₽ RUB</option>
-								</select>
 							</div>
 						</div>
 					</div>

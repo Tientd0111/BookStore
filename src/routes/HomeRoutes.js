@@ -2,11 +2,11 @@ import {Route, Switch} from "react-router-dom";
 import HomePage from "../lode/pages/HomePage";
 import PATH from './path';
 
-const HomeRoutes = () => {
+const HomeRoutes = ({handleAddProduct}) => {
 	return (
 		<Switch>
 			<Route exact path={PATH.HOME}>
-				<HomePage/>
+				<HomePage handleAddProduct={handleAddProduct}/>
 			</Route>
 		</Switch>
 	);
