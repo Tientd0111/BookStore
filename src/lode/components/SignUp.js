@@ -1,10 +1,10 @@
 import React, {useRef} from 'react';
-import FormInput from "./FormInput";
 import {useForm} from "react-hook-form";
 import {useUserStore} from "../../stores/useUserStore";
+import FormInput from "./FormInput";
 import ButtonBase from "./ButtonBase";
 
-const SignUp = () => {
+const LoginComponent = () => {
 	const closeRef = useRef()
 	const {handleSubmit, control } = useForm();
 	const onSubmit = async data => {
@@ -15,7 +15,7 @@ const SignUp = () => {
 		loading: state.loading,
 		register: state.register,
 	}))
-
+	// const closeRef = useRef()
 	return (
 		<div className="modal fade login-modal sign-in" id="signin" tabIndex={-1} role="dialog" aria-labelledby="signin" aria-hidden="true">
 			<div className="modal-dialog modal-dialog-centered " role="document">
@@ -46,8 +46,7 @@ const SignUp = () => {
 				</div>
 			</div>
 		</div>
-
 	);
 };
 
-export default SignUp;
+export default LoginComponent;
