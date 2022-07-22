@@ -116,15 +116,8 @@ const HomePage = ({handleAddProduct}) => {
 													<Link to={PATH.BOOK_DETAIL} onClick={()=>onsubmit(it.id)} className="d-block"><CsImage uri={it.fileName} className="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" /></Link>
 												</div>
 												<div className="woocommerce-loop-product__body product__body pt-3 bg-white">
-													{it?.categories.map((cate)=>(
-														<div key={cate.id} className="text-uppercase font-size-1 mb-1 text-truncate"><a href="../shop/single-product-v1.html">{cate?.name}</a></div>
-													))}
-
 													<h2 className="woocommerce-loop-product__title product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark">
 														<a href="../shop/single-product-v1.html">{it.name}</a></h2>
-													{it?.authors.map((authors)=>(
-														<div key={authors.id} className="font-size-2  mb-1 text-truncate"><a href="others/authors-single.html" className="text-gray-700">{authors?.name}</a></div>
-													))}
 													<div className="price d-flex align-items-center font-weight-medium font-size-3" style={{gap:'10px'}}>
 														<span className="woocommerce-Price-amount amount">
 															{it.saleprice === 0 ?
@@ -179,15 +172,8 @@ const HomePage = ({handleAddProduct}) => {
 														<Link to={PATH.BOOK_DETAIL} onClick={()=>onsubmit(it.id)} className="d-block"><CsImage uri={it.fileName} className="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" /></Link>
 													</div>
 													<div className="woocommerce-loop-product__body product__body pt-3 bg-white">
-														{it?.categories.map((cate)=>(
-															<div key={cate.id} className="text-uppercase font-size-1 mb-1 text-truncate"><a href="../shop/single-product-v1.html">{cate?.name}</a></div>
-														))}
-
 														<h2 className="woocommerce-loop-product__title product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark">
 															<a href="../shop/single-product-v1.html">{it.name}</a></h2>
-														{it?.authors.map((authors)=>(
-															<div key={authors.id} className="font-size-2  mb-1 text-truncate"><a href="others/authors-single.html" className="text-gray-700">{authors?.name}</a></div>
-														))}
 														<div className="price d-flex align-items-center font-weight-medium font-size-3" style={{gap:'10px'}}>
 														<span className="woocommerce-Price-amount amount">
 															<span style={{display:'flex',alignItems:"center",gap:"10px"}}>
@@ -199,15 +185,15 @@ const HomePage = ({handleAddProduct}) => {
 														</div>
 													</div>
 													<div className="product__hover d-flex align-items-center">
-									<span style={{cursor:'pointer'}} onClick={()=>handleAddProduct(it)} className="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="ADD TO CART">
-										<span className="product__add-to-cart">ADD TO CART</span>
-										<span className="product__add-to-cart-icon font-size-4"><i className="flaticon-icon-126515" /></span>
-									</span>
-														<a href="../shop/single-product-v1.html" className="mr-1 h-p-bg btn btn-outline-primary border-0">
-															<FontAwesomeIcon icon={['fas','eye']} />
-														</a>
+														<span style={{cursor:'pointer'}} onClick={()=>handleAddProduct(it)}  className="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="ADD TO CART">
+															<span className="product__add-to-cart">ADD TO CART</span>
+															<span className="product__add-to-cart-icon font-size-4"><i className="flaticon-icon-126515" /></span>
+														</span>
+														<Link to={PATH.BOOK_DETAIL} onClick={()=>onsubmit(it.id)} className="mr-1 h-p-bg btn btn-outline-primary border-0">
+															<FontAwesomeIcon icon={['fas','eye']}/>
+														</Link>
 														<a href="../shop/single-product-v1.html" className="h-p-bg btn btn-outline-primary border-0">
-															<FontAwesomeIcon icon={['fas','heart']} />
+															<FontAwesomeIcon icon={['fas','heart']}/>
 														</a>
 													</div>
 												</div>
@@ -257,10 +243,8 @@ const HomePage = ({handleAddProduct}) => {
 															<Link to={PATH.BOOK_DETAIL} onClick={()=>onsubmit(item.id)} className="d-block"><CsImage uri={item.filename} className="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" /></Link>
 														</div>
 														<div className="woocommerce-loop-product__body product__body pt-3 bg-white">
-															<div className="text-uppercase font-size-1 mb-1 text-truncate"><a href="../shop/single-product-v1.html">Paperback</a></div>
 															<h2 className="woocommerce-loop-product__title product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark">
 																<a href="../shop/single-product-v1.html">{item.name}</a></h2>
-															<div className="font-size-2  mb-1 text-truncate"><a href="../others/authors-single.html" className="text-gray-700">Jay Shetty</a></div>
 															<div className="price d-flex align-items-center font-weight-medium font-size-3" style={{gap:'10px'}}>
 														<span className="woocommerce-Price-amount amount">
 															{item.saleprice === 0 ?
@@ -275,10 +259,10 @@ const HomePage = ({handleAddProduct}) => {
 															</div>
 														</div>
 														<div className="product__hover d-flex align-items-center">
-															<a href="../shop/single-product-v1.html" className="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="ADD TO CART">
+															<span style={{cursor:'pointer'}} onClick={()=>handleAddProduct(item)} className="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="ADD TO CART">
 																<span className="product__add-to-cart">ADD TO CART</span>
 																<span className="product__add-to-cart-icon font-size-4"><i className="flaticon-icon-126515" /></span>
-															</a>
+															</span>
 															<Link to={PATH.BOOK_DETAIL} onClick={()=>onsubmit(item.id)} className="mr-1 h-p-bg btn btn-outline-primary border-0">
 																<FontAwesomeIcon icon={['fas','eye']}/>
 															</Link>
@@ -308,15 +292,11 @@ const HomePage = ({handleAddProduct}) => {
 								<div className="media p-3 p-md-4d875">
 									<Link to={PATH.BOOK_DETAIL} onClick={()=>onsubmit(it.id)} className="d-block"><CsImage uri={it.fileName}/></Link>
 									<div className="media-body ml-4d875">
-										{it?.categories.map((item)=>(
-											<div key={item.id} className="text-uppercase font-size-1 mb-1 text-truncate"><a href="/#">{item.name}</a></div>
-										))}
+
 										<h2 className="woocommerce-loop-product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark"><a href="/#">
 											{it.name}
 										</a></h2>
-										{it?.authors.map((item)=>(
-											<div className="font-size-2 mb-1 text-truncate"><a href="/#" className="text-gray-700">{item.name}</a></div>
-										))}
+
 										<div className="price d-flex align-items-center font-weight-medium font-size-3" style={{gap:'10px'}}>
 														<span className="woocommerce-Price-amount amount">
 															{it.saleprice === 0 ?

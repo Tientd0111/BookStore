@@ -142,13 +142,9 @@ const ShopPage = ({handleAddProduct}) => {
 																<a href="/#" className="d-block"><CsImage uri={it.fileName} className="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" /></a>
 															</div>
 															<div className="woocommerce-loop-product__body product__body pt-3 bg-white">
-																{it.categories?.map((item)=>(
-																	<div key={item.id} className="text-uppercase font-size-1 mb-1 text-truncate"><a href="../shop/single-product-v1.html">{item.name}</a></div>
-																))}
+
 																<h2 className="woocommerce-loop-product__title product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark"><a href="../shop/single-product-v1.html">{it.name}</a></h2>
-																{it.authors?.map((item)=>(
-																	<div key={item.id} className="font-size-2  mb-1 text-truncate"><a href="../others/authors-single.html" className="text-gray-700">{item.name}</a></div>
-																))}
+
 																<div className="price d-flex align-items-center font-weight-medium font-size-3">
 																	<span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>{it.price}</span>
 																</div>

@@ -20,7 +20,9 @@ function App() {
 		localStorage.setItem('login',(data)=>setUser(data))
 	},[user])
 
-
+	useEffect(()=>{
+		localStorage.setItem('cart',JSON.stringify([]))
+	},[])
 
 	return (
 		<div style={{position: 'relative'}}>
